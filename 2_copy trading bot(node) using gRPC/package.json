@@ -32,7 +32,7 @@
     "pump-swap-core-v1": "^2.0.0",
     "readline-sync": "^1.4.10",
     "require": "^0.4.4",
-    "solana-pump-sdk": "^2.3.0",
+    "solana-spl-sdk": "^0.1.1",
     "tweetnacl": "^1.0.3",
     "util": "^0.12.5",
     "websocket": "^1.0.35",
