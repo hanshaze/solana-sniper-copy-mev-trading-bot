@@ -44,7 +44,7 @@ Both implementations provide:
 - **Customizable Sell Logic**: Implement your own profit-taking strategies
 - **Multi-Platform Support**: Works with PumpSwap, PumpFun, Raydium LaunchLab,bonk and more
 
- ## **Telegram**: [@hanshaze](https://t.me/hanshaze)
+ ## **Telegram**: [@hanshaze007](https://t.me/hanshaze007)
 ## 🎯 Key Advantages
 
 ### ⚡ Ultra-Fast Execution
@@ -377,7 +377,7 @@ For ultra-fast swap code using off-chain signing and custom sell logic optimizat
 - **24/7 Support**: Round-the-clock assistance
 
 ### Contact Information
-- **Telegram**: [@hanshaze](https://t.me/hanshaze)
+- **Telegram**: [@hanshaze007](https://t.me/hanshaze007)
 
 
 ## 📄 License

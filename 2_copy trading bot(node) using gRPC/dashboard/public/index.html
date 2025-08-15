@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solana Trading Bot Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .card {
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .status-running { color: #10b981; }
+        .status-stopped { color: #ef4444; }
+        .status-warning { color: #f59e0b; }
+        .refresh-btn:hover { transform: rotate(180deg); transition: transform 0.3s ease; }
+    </style>
+</head>
+<body class="bg-gray-900 text-white min-h-screen">
+    <!-- Header -->
+    <header class="gradient-bg p-6 shadow-lg">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex items-center space-x-4">
+                <i class="fas fa-robot text-3xl"></i>
+                <div>
+                    <h1 class="text-2xl font-bold">Solana Trading Bot</h1>
+                    <p class="text-blue-100">Advanced MEV Protection & Risk Management</p>
+                </div>
+            </div>
+            <div class="flex items-center space-x-4">
+                <div class="text-right">
+                    <div class="text-sm text-blue-100">Status</div>
+                    <div id="botStatus" class="font-bold status-running">
+                        <i class="fas fa-circle mr-2"></i>Running
+                    </div>
+                </div>
+                <button id="refreshBtn" class="refresh-btn bg-white bg-opacity-20 p-3 rounded-full hover:bg-opacity-30 transition-all">
+                    <i class="fas fa-sync-alt text-white"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto p-6 space-y-6">
+        <!-- Quick Stats -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="card rounded-lg p-6">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-blue-200 text-sm">Active Positions</p>
+                        <p id="activePositions" class="text-2xl font-bold">-</p>
+                    </div>
+                    <i class="fas fa-chart-line text-2xl text-blue-400"></i>
+                </div>
+            </div>
+            
+            <div class="card rounded-lg p-6">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-blue-200 text-sm">Daily PnL</p>
+                        <p id="dailyPnL" class="text-2xl font-bold">-</p>
+                    </div>
+                    <i class="fas fa-coins text-2xl text-green-400"></i>
+                </div>
+            </div>
+            
+            <div class="card rounded-lg p-6">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-blue-200 text-sm">Win Rate</p>
+                        <p id="winRate" class="text-2xl font-bold">-</p>
+                    </div>
+                    <i class="fas fa-trophy text-2xl text-yellow-400"></i>
+                </div>
+            </div>
+            
+            <div class="card rounded-lg p-6">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-blue-200 text-sm">Risk Level</p>
+                        <p id="riskLevel" class="text-2xl font-bold">-</p>
+                    </div>
+                    <i class="fas fa-shield-alt text-2xl text-red-400"></i>
+                </div>
+            </div>
+        </div>
+
+        <!-- Charts Row -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <!-- PnL Chart -->
+            <div class="card rounded-lg p-6">
+                <h3 class="text-lg font-semibold mb-4">Daily PnL Trend</h3>
+                <canvas id="pnlChart" height="200"></canvas>
+            </div>
+            
+            <!-- Positions Chart -->
+            <div class="card rounded-lg p-6">
+                <h3 class="text-lg font-semibold mb-4">Active Positions</h3>
+                <canvas id="positionsChart" height="200"></canvas>
+            </div>
+        </div>
+
+        <!-- Active Positions Table -->
+        <div class="card rounded-lg p-6">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="text-lg font-semibold">Active Positions</h3>
+                <button id="emergencyCloseBtn" class="bg-red-600 hover:bg-red-700 px-4 py-2 rounded-lg transition-colors">
+                    <i class="fas fa-exclamation-triangle mr-2"></i>Emergency Close All
+                </button>
+            </div>
+            <div class="overflow-x-auto">
+                <table class="w-full">
+                    <thead>
+                        <tr class="border-b border-gray-700">
+                            <th class="text-left p-3">Token</th>
+                            <th class="text-left p-3">Entry Price</th>
+                            <th class="text-left p-3">Current Price</th>
+                            <th class="text-left p-3">PnL</th>
+                            <th class="text-left p-3">Hold Time</th>
+                            <th class="text-left p-3">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="positionsTableBody">
+                        <tr>
+                            <td colspan="6" class="text-center p-6 text-gray-400">Loading positions...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Trading History -->
+        <div class="card rounded-lg p-6">
+            <h3 class="text-lg font-semibold mb-4">Recent Trades</h3>
+            <div class="overflow-x-auto">
+                <table class="w-full">
+                    <thead>
+                        <tr class="border-b border-gray-700">
+                            <th class="text-left p-3">Time</th>
+                            <th class="text-left p-3">Type</th>
+                            <th class="text-left p-3">Token</th>
+                            <th class="text-left p-3">Amount</th>
+                            <th class="text-left p-3">Price</th>
+                            <th class="text-left p-3">PnL</th>
+                        </tr>
+                    </thead>
+                    <tbody id="historyTableBody">
+                        <tr>
+                            <td colspan="6" class="text-center p-6 text-gray-400">Loading history...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Configuration -->
+        <div class="card rounded-lg p-6">
+            <h3 class="text-lg font-semibold mb-4">Bot Configuration</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4" id="configGrid">
+                <!-- Configuration will be populated here -->
+            </div>
+        </div>
+    </main>
+
+    <!-- Emergency Close Modal -->
+    <div id="emergencyModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+        <div class="bg-gray-800 p-6 rounded-lg max-w-md w-full mx-4">
+            <h3 class="text-xl font-bold text-red-400 mb-4">
+                <i class="fas fa-exclamation-triangle mr-2"></i>Emergency Close All
+            </h3>
+            <p class="text-gray-300 mb-4">This will immediately close all active positions. Are you sure?</p>
+            <div class="flex space-x-3">
+                <button id="confirmEmergencyClose" class="bg-red-600 hover:bg-red-700 px-4 py-2 rounded-lg transition-colors">
+                    Yes, Close All
+                </button>
+                <button id="cancelEmergencyClose" class="bg-gray-600 hover:bg-gray-700 px-4 py-2 rounded-lg transition-colors">
+                    Cancel
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>

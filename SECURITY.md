@@ -20,8 +20,8 @@ If you discover a security vulnerability, **please report it responsibly**.
 
 Send a private disclosure message to:
 
-- **Telegram (Preferred):** [@hanshaze](https://t.me/hanshaze)  
-- **Email:** [hicrs423@gmail.com](mailto:hicrs423@gmail.com)
+- **Telegram (Preferred):** [@hanshaze007](https://t.me/hanshaze007)  
+
 
 We will acknowledge your report within **48 hours** and work with you on a timely resolution.
 
@@ -74,4 +74,4 @@ The following are **not considered security issues**:
 Thanks for making **Solana Sniper Copy MEV Trading Bot** safer for the entire Solana community.  
 Security is a shared responsibility — and we appreciate your help.
 
-*Maintained by [@hanshaze](https://github.com/hanshaze)*
+*Maintained by [@hanshaze007](https://github.com/hanshaze007)*

@@ -1,0 +1,15 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 14
+    },
+    "auditLog": "logs\\.6dee68a8e2d6fa545f978ea2a4cd18a2469f8eef-audit.json",
+    "files": [
+        {
+            "date": 1755198754557,
+            "name": "logs\\trading-bot-2025-08-14.log",
+            "hash": "2ce46b1fe2271a1eaab915e581771fb25f76310f7424154bac8bcfe21bdb8a8a"
+        }
+    ],
+    "hashType": "sha256"
+}

@@ -1,0 +1,20 @@
+{"level":"info","message":"Configuration validated successfully","service":"solana-trading-bot","timestamp":"2025-08-14T19:12:39.094Z"}
+{"level":"info","message":"🚀 Starting Solana Trading Bot...","service":"solana-trading-bot","timestamp":"2025-08-14T19:12:39.096Z"}
+{"level":"info","message":"Wallet balance: 0.004996182 SOL","service":"solana-trading-bot","timestamp":"2025-08-14T19:12:40.970Z"}
+{"level":"info","message":"🚀 Starting Solana Raydium Sniper Bot...","service":"solana-trading-bot","timestamp":"2025-08-14T19:12:40.973Z"}
+{"level":"info","message":"🔑 Wallet Public Key: DopsYMstRqBm3SSsn1vY6sjhFPjXbtQeTPoXWsoopodF","service":"solana-trading-bot","timestamp":"2025-08-14T19:12:40.973Z"}
+{"level":"info","message":"💰 Sniper Amount: 0.00001 SOL","service":"solana-trading-bot","timestamp":"2025-08-14T19:12:40.974Z"}
+{"level":"info","message":"🎯 Profit Target: 2x","service":"solana-trading-bot","timestamp":"2025-08-14T19:12:40.974Z"}
+{"level":"info","message":"🛑 Stop Loss: 0.5x","service":"solana-trading-bot","timestamp":"2025-08-14T19:12:40.974Z"}
+{"level":"info","message":"⏱️ Max Hold Time: 300s","service":"solana-trading-bot","timestamp":"2025-08-14T19:12:40.975Z"}
+{"level":"info","message":"📊 Max Positions: 5","service":"solana-trading-bot","timestamp":"2025-08-14T19:12:40.975Z"}
+{"context":null,"level":"info","message":"New token launch detected: 6BuNjmVX86rP7iYKWi8mWGZujFYGsb91z2NNxxiabonk","poolStatus":"raydium","service":"solana-trading-bot","timestamp":"2025-08-14T19:12:57.819Z"}
+{"level":"info","message":"Executing sniper trade for 6BuNjmVX86rP7iYKWi8mWGZujFYGsb91z2NNxxiabonk","service":"solana-trading-bot","timestamp":"2025-08-14T19:12:57.819Z"}
+{"level":"error","message":"Failed to execute sniper trade for 6BuNjmVX86rP7iYKWi8mWGZujFYGsb91z2NNxxiabonk","service":"solana-trading-bot","timestamp":"2025-08-14T19:13:02.572Z"}
+{"context":{"amountIn":"309346784","amountOut":"1416041927389","platformFee":"3093468","poolState":"H6Cnafust6WPiduKfuuYoaYLLVHJankcuvRYjVdBrW8n","poolStatus":{"normal":{}},"protocolFee":"773367","realBaseAfter":"687438457793402","realBaseBefore":"686022415866013","realQuoteAfter":"53486586492","realQuoteBefore":"53181106543","shareFee":"0","totalBaseSell":"793100000000000","tradeDirection":0,"virtualBase":"1073025605596382","virtualQuote":"30000852951"},"level":"info","message":"New token launch detected: EJhqXKJEncSx1HJjS5ZpKdiKGGgLiRgNPvo8JZvw5Guj","poolStatus":"raydium_launchlab","service":"solana-trading-bot","timestamp":"2025-08-14T19:13:28.663Z"}
+{"level":"info","message":"Executing sniper trade for EJhqXKJEncSx1HJjS5ZpKdiKGGgLiRgNPvo8JZvw5Guj","service":"solana-trading-bot","timestamp":"2025-08-14T19:13:28.663Z"}
+{"level":"error","message":"Failed to execute sniper trade for EJhqXKJEncSx1HJjS5ZpKdiKGGgLiRgNPvo8JZvw5Guj","service":"solana-trading-bot","timestamp":"2025-08-14T19:13:32.143Z"}
+{"context":null,"level":"info","message":"New token launch detected: 3mEqoZn2s6CMtPAuD2jF9CGjEfPCeDAiVLsNj6Xrbonk","poolStatus":"raydium","service":"solana-trading-bot","timestamp":"2025-08-14T19:13:32.214Z"}
+{"level":"info","message":"Executing sniper trade for 3mEqoZn2s6CMtPAuD2jF9CGjEfPCeDAiVLsNj6Xrbonk","service":"solana-trading-bot","timestamp":"2025-08-14T19:13:32.214Z"}
+{"level":"error","message":"Failed to execute sniper trade for 3mEqoZn2s6CMtPAuD2jF9CGjEfPCeDAiVLsNj6Xrbonk","service":"solana-trading-bot","timestamp":"2025-08-14T19:13:35.375Z"}
+{"level":"info","message":"🛑 SIGINT received, shutting down...","service":"solana-trading-bot","timestamp":"2025-08-14T19:14:09.666Z"}
