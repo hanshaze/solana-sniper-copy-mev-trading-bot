@@ -1,4 +1,4 @@
-# 🚀 Solana Copy Sniper & MEV Trading Bot (Node.js & Rust) — PumpFun, Bonk, Raydium
+# 🚀Best Solana Copy Sniper & MEV Trading Bot (Node.js & Rust) — PumpFun, Bonk, Raydium
 
 > **Ultra-fast, customizable Solana copy trading, sniper, and MEV bot with advanced sell logic for maximum profit.**
 
