@@ -28,7 +28,7 @@ Hire me for custom development:
 - Get ultra-fast swap code, 0block confirm, off-chain signing, and expert support.
 
 ---
-## 0 Block available
+## Same Block available
 https://solscan.io/tx/3Rp2nV8JPdzxdCsX46Lt2rcUPAqLHubTbCUL4PRzAJknVfqiwQ8dTiYq7FHVSQ9ERMHhwi1pbaGDDVAAQ6uDtZRe  (My Wallet)
 
 https://solscan.io/tx/3M4HxfsfnGRK9nPBnh9RBqKZKaytEgjnRBk3ZWxXUTzpfWAz6PVW2Jxk28VGGWJohCb4iNMk1GrZ6dmCsuJ6w93F     (Target Wallet)
@@ -44,7 +44,8 @@ https://solscan.io/tx/4EgSxC6Bi6qZkjTdzjprJrjRuKabhB57Hkbysb1jxwZRADy8FgHbvT5vMh
 https://solscan.io/tx/veD5eiQX47Rr71dxhXcfMkHcowwb36GtGgTboJmajUhHRuEDqYnKmn2PhVDis2QT57GEc6mqkFSvpqkdUuok5MM           (Target Wallet)
 
 <img width="1701" height="366" alt="image" src="https://github.com/user-attachments/assets/835d6d25-3645-46c6-8043-4b126b124475" />
-
+<img width="1226" height="558" alt="image" src="https://github.com/user-attachments/assets/3cdbe090-bb2c-4ba1-a6ee-ce6d6290627b" />
+https://medium.com/@odinbotio/the-50-trade-challenge-how-odinbot-outpaced-every-competitor-0ca864b50215
 ---
 
 ### 🛠️ Two Powerful Implementations
