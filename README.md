@@ -48,6 +48,7 @@ A6sxxPN8uksAHxoPtMEoArn9nz5nrP3gKNpDXm8Tpump +$3.68(+40.51%)
 https://solscan.io/tx/3tybz8GhejnAD9yRB2Gvn2XH2Jb1sGsw9N5xQTJC9wifg9WERd85d4AszfV5kJz5agPXiDXmWMyDfNqzD1E3pFoB (Target Wallet)
 https://solscan.io/tx/3tq6kvBmeQ1jgASnU3X1P4HcKyMwMg8wDH8ZubHpE3M3CAtPUUxP5H3L8XRzU837Ssys3ESjXR1fsCn3BGxWEqL9 (BUY-testing wallet)
 
+<img width="1602" height="494" alt="image" src="https://github.com/user-attachments/assets/6cc870f0-fd89-47c7-9413-297976cc10ce" />
 <img width="726" height="229" alt="image" src="https://github.com/user-attachments/assets/0c857ff9-3aff-4037-90ad-a78a2ab5e89f" />
 <img width="1701" height="366" alt="image" src="https://github.com/user-attachments/assets/835d6d25-3645-46c6-8043-4b126b124475" />
 <img width="1226" height="558" alt="image" src="https://github.com/user-attachments/assets/3cdbe090-bb2c-4ba1-a6ee-ce6d6290627b" />
