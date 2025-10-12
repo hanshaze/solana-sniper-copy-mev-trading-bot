@@ -78,7 +78,7 @@ https://medium.com/@odinbotio/the-50-trade-challenge-how-odinbot-outpaced-every-
 
 ---
 
-## 📲 Telegram: [@Hans_haze](https://t.me/Hans_haze)
+## 📲 Telegram: [@solbotdeveloper](https://t.me/solbotdeveloper)
 
 ---
 
@@ -401,7 +401,7 @@ For ultra-fast swap code using off-chain signing and custom sell logic optimizat
 - **24/7 Support**: Round-the-clock assistance
 
 ### Contact Information
-- **Telegram**: [@Hans_haze](https://t.me/Hans_haze)
+- **Telegram**: [@solbotdeveloper](https://t.me/solbotdeveloper)
 
 
 ## 📄 License
