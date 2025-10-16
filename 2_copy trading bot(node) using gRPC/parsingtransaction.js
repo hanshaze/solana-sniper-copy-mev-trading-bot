@@ -1,4 +1,7 @@
 import bs58 from "bs58";
+import dotenv from "dotenv";
+dotenv.config();
+const DIRECT_ADDED_PUMPSWAP = process.env.DIRECT_ADDED_PUMPSWAP === "true";
 
 // New function to handle parsed transaction data from getDataFromTx
 export async function parseTransactionFromData(parsedTx) {
@@ -95,7 +98,7 @@ export async function tOutPut(data) {
     return null;
   }
   
-  // console.log("🎈🎈🎈largestDataInstruction:::", largestDataInstruction.data);
+  // console.log("🎈🎈🎈largestDataInstruction length:::", (largestDataInstruction.data).length);
   const parsedInstructionData = parseTransactionData(largestDataInstruction.data);
   // console.log("🎈",JSON.stringify(parsedInstructionData,null,2))
 
@@ -128,24 +131,25 @@ export function parseTransactionData(buffer) {
     function parseBigInt(offset) {
       return buffer.readBigUInt64LE(offset).toString(); // Read 8 bytes as Little-Endian
     }
+   
 
-    if (buffer.length == 368) {
+    if (buffer.length == 401) {
       const parsedData_PumpSwap = {
         mint: null,
         timestamp: parseBigInt(16), // 8 bytes (Timestamp)
-        baseAmountIn: parseBigInt(24), // 8 bytes (Base amount in)
-        minQuoteAmountOut: parseBigInt(32), // 8 bytes (Minimum quote amount out)
+        baseAmountOut: parseBigInt(24), // 8 bytes (Base amount out)
+        maxQuoteAmountIn: parseBigInt(32), // 8 bytes (Maximum quote amount in)
         userBaseTokenReserves: parseBigInt(40), // 8 bytes (User base token reserves)
         userQuoteTokenReserves: parseBigInt(48), // 8 bytes (User quote token reserves)
         poolBaseTokenReserves: parseBigInt(56), // 8 bytes (Pool base token reserves)
         poolQuoteTokenReserves: parseBigInt(64), // 8 bytes (Pool quote token reserves)
-        quoteAmountOut: parseBigInt(72), // 8 bytes (Quote amount out)
+        quoteAmountIn: parseBigInt(72), // 8 bytes (Quote amount in)
         lpFeeBasisPoints: parseBigInt(80), // 8 bytes (LP fee basis points)
         lpFee: parseBigInt(88), // 8 bytes (LP fee)
         protocolFeeBasisPoints: parseBigInt(96), // 8 bytes (Protocol fee basis points)
         protocolFee: parseBigInt(104), // 8 bytes (Protocol fee)
-        quoteAmountOutWithoutLpFee: parseBigInt(112), // 8 bytes (Quote amount out without LP fee)
-        userQuoteAmountOut: parseBigInt(120), // 8 bytes (User quote amount out)
+        quoteAmountInWithLpFee: parseBigInt(112), // 8 bytes (Quote amount in with LP fee)
+        userQuoteAmountIn: parseBigInt(120), // 8 bytes (User quote amount in)
         pool: parsePublicKey(128), // 32 bytes (Pool address)
         user: parsePublicKey(160), // 32 bytes (User address)
         userBaseTokenAccount: parsePublicKey(192), // 32 bytes (User base token account)
@@ -155,22 +159,73 @@ export function parseTransactionData(buffer) {
         coinCreator: parsePublicKey(320), // 32 bytes (Coin creator address)
         coinCreatorFeeBasisPoints: parseBigInt(328), // 8 bytes (Coin creator fee basis points)
         coinCreatorFee: parseBigInt(336), // 8 bytes (Coin creator fee)
+        trackVolume: Boolean(parseBigInt(344)), // read 8 bytes at offset 344 as boolean (0 == false, else true)
+        totalUnclaimedTokens: parseBigInt(352), // offset 352, 8 bytes
+        totalClaimedTokens: parseBigInt(360),   // offset 360, 8 bytes
+        currentSolVolume: parseBigInt(368),     // offset 368, 8 bytes
+        lastUpdateTimestamp: parseBigInt(376)   // offset 376, 8 bytes
       };
       // console.log(parsedData_PumpSwap);
-      let isBuy = parsedData_PumpSwap.quoteAmountOutWithoutLpFee > parsedData_PumpSwap.quoteAmountOut;
-      return {
-        solchange: parsedData_PumpSwap.userQuoteAmountOut,
-        tokenchange: parsedData_PumpSwap.baseAmountIn,
-        isBuy,
-        user: parsedData_PumpSwap.user,
-        mint: parsedData_PumpSwap.mint,
-        pool: parsedData_PumpSwap.pool,
-        liquidity: parsedData_PumpSwap.poolQuoteTokenReserves * 2,
-        coinCreator: parsedData_PumpSwap.coinCreator,
-        pool_status: "pumpswap",
-        context: parsedData_PumpSwap,
-      };
-    } else if (buffer.length == 233) {
+      let isBuy =true;
+     
+        return {
+          solchange: parsedData_PumpSwap.userQuoteAmountIn, // the amount of sol/quote user put in
+          tokenchange: parsedData_PumpSwap.baseAmountOut,   // the amount of token/base received
+          isBuy,
+          user: parsedData_PumpSwap.user,
+          mint: parsedData_PumpSwap.mint,
+          pool: parsedData_PumpSwap.pool,
+          liquidity: String(BigInt(parsedData_PumpSwap.poolBaseTokenReserves) * 2n), // standard: base reserves * 2
+          coinCreator: parsedData_PumpSwap.coinCreator,
+          pool_status: "pumpswap",
+          context: parsedData_PumpSwap,
+        };
+    } else if (buffer.length == 368) {
+     
+        const parsedData_PumpSwap = {
+          mint: null,
+          timestamp: parseBigInt(16), // 8 bytes (Timestamp)
+          baseAmountOut: parseBigInt(24), // 8 bytes (Base amount out)
+          maxQuoteAmountIn: parseBigInt(32), // 8 bytes (Maximum quote amount in)
+          userBaseTokenReserves: parseBigInt(40), // 8 bytes (User base token reserves)
+          userQuoteTokenReserves: parseBigInt(48), // 8 bytes (User quote token reserves)
+          poolBaseTokenReserves: parseBigInt(56), // 8 bytes (Pool base token reserves)
+          poolQuoteTokenReserves: parseBigInt(64), // 8 bytes (Pool quote token reserves)
+          quoteAmountIn: parseBigInt(72), // 8 bytes (Quote amount in)
+          lpFeeBasisPoints: parseBigInt(80), // 8 bytes (LP fee basis points)
+          lpFee: parseBigInt(88), // 8 bytes (LP fee)
+          protocolFeeBasisPoints: parseBigInt(96), // 8 bytes (Protocol fee basis points)
+          protocolFee: parseBigInt(104), // 8 bytes (Protocol fee)
+          quoteAmountInWithLpFee: parseBigInt(112), // 8 bytes (Quote amount in with LP fee)
+          userQuoteAmountIn: parseBigInt(120), // 8 bytes (User quote amount in)
+          pool: parsePublicKey(128), // 32 bytes (Pool address)
+          user: parsePublicKey(160), // 32 bytes (User address)
+          userBaseTokenAccount: parsePublicKey(192), // 32 bytes (User base token account)
+          userQuoteTokenAccount: parsePublicKey(224), // 32 bytes (User quote token account)
+          protocolFeeRecipient: parsePublicKey(256), // 32 bytes (Protocol fee recipient)
+          protocolFeeRecipientTokenAccount: parsePublicKey(288), // 32 bytes (Protocol fee recipient token account)
+          coinCreator: parsePublicKey(320), // 32 bytes (Coin creator address)
+          coinCreatorFeeBasisPoints: parseBigInt(328), // 8 bytes (Coin creator fee basis points)
+          coinCreatorFee: parseBigInt(336), // 8 bytes (Coin creator fee)
+         
+        };
+        // console.log(parsedData_PumpSwap);
+        let isBuy =false;
+       
+          return {
+            solchange: parsedData_PumpSwap.userQuoteAmountIn, // the amount of sol/quote user put in
+            tokenchange: parsedData_PumpSwap.baseAmountOut,   // the amount of token/base received
+            isBuy,
+            user: parsedData_PumpSwap.user,
+            mint: parsedData_PumpSwap.mint,
+            pool: parsedData_PumpSwap.pool,
+            liquidity: String(BigInt(parsedData_PumpSwap.poolBaseTokenReserves) * 2n), // standard: base reserves * 2
+            coinCreator: parsedData_PumpSwap.coinCreator,
+            pool_status: "pumpswap",
+            context: parsedData_PumpSwap,
+          };
+      } 
+    else if (buffer.length == 266) {
       const parsedData_PumpFun = {
         mint: parsePublicKey(16), // 32 bytes (Mint address)
         solAmount: parseBigInt(48), // 8 bytes (Amount in SOL)
@@ -188,6 +243,11 @@ export function parseTransactionData(buffer) {
         creator: parsePublicKey(185), // 32 bytes (Creator address)
         creatorFeeBasisPoints: parseBigInt(217), // 8 bytes (Creator fee basis points)
         creatorFee: parseBigInt(225), // 8 bytes (Creator fee amount)
+        trackVolume: buffer[232] === 1,
+        totalUnclaimedTokens: parseBigInt(233),
+        totalClaimedTokens: parseBigInt(241),
+        currentSolVolume: parseBigInt(249),
+        lastUpdateTimestamp: parseBigInt(257),
       };
       // console.log(parsedData_PumpFun);
 

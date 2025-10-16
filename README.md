@@ -47,6 +47,15 @@ https://solscan.io/tx/veD5eiQX47Rr71dxhXcfMkHcowwb36GtGgTboJmajUhHRuEDqYnKmn2PhV
 
 ---
 
+## 🔄 Recent Updates
+
+### ✨ Latest Improvements
+- **Enhanced Transaction Parsing**: Updated Solana PumpFun and PumpSwap transaction parsing for improved accuracy and speed
+- **Better Platform Detection**: More reliable identification of trading platforms and transaction types
+- **Optimized Performance**: Faster transaction processing and reduced latency
+
+---
+
 ### 🛠️ Two Powerful Implementations
 
 #### 📁 Node.js (`copy sniper bot(node) using gRPC/`)

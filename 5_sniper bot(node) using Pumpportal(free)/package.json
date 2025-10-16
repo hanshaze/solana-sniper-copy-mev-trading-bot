@@ -1,0 +1,26 @@
+{
+  "name": "solana-pumpfun-sniper-bot",
+  "version": "1.0.0",
+  "description": "Solana PumpFun sniper bot using PumpPortal API",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "node --watch index.js",
+    "setup": "node setup.js"
+  },
+  "keywords": ["solana", "pumpfun", "sniper", "trading", "bot", "pumpportal"],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@solana/web3.js": "^1.87.6",
+    "@solana/spl-token": "^0.3.9",
+    "axios": "^1.6.2",
+    "ws": "^8.14.2",
+    "dotenv": "^16.3.1",
+    "bs58": "^5.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  }
+}
