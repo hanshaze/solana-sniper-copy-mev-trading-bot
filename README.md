@@ -375,7 +375,7 @@ const parsedData = {
 ## 💡 Pro Tips
 ### 🖥️ Recommended VPS
 
-For the best performance and ultra-low latency, I personally use a New York VPS from [tradingvps.io] (https://app.tradingvps.io/link.php?id=13)
+For the best performance and ultra-low latency, I personally use a New York VPS from [tradingvps.io](https://app.tradingvps.io/link.php?id=13)
 - it’s incredibly fast and stable.
 - ✅ Highly recommended for running Solana trading bots efficiently.
 
