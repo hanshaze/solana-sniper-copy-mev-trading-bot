@@ -373,6 +373,11 @@ const parsedData = {
 - **Ultra-fast Swap Code**: Off-chain signing implementation
 
 ## 💡 Pro Tips
+### 🖥️ Recommended VPS
+
+For the best performance and ultra-low latency, I personally use a New York VPS from [tradingvps.io] (https://tradingvps.io)
+ — it’s incredibly fast and stable.
+✅ Highly recommended for running Solana trading bots efficiently.
 
 ### Choosing Between Implementations
 - **Use Node.js version** if you want:
