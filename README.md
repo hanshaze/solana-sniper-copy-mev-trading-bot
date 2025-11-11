@@ -87,7 +87,7 @@ https://medium.com/@odinbotio/the-50-trade-challenge-how-odinbot-outpaced-every-
 
 ---
 
-## 📲 Telegram: [@solbotdeveloper](https://t.me/solbotdeveloper)
+## 📲 Telegram
 
 ---
 
@@ -373,6 +373,11 @@ const parsedData = {
 - **Ultra-fast Swap Code**: Off-chain signing implementation
 
 ## 💡 Pro Tips
+### 🖥️ Recommended VPS
+
+For the best performance and ultra-low latency, I personally use a New York VPS from [tradingvps.io](https://app.tradingvps.io/link.php?id=13)
+- it’s incredibly fast and stable.
+- ✅ Highly recommended for running Solana trading bots efficiently.
 
 ### Choosing Between Implementations
 - **Use Node.js version** if you want:
@@ -410,7 +415,7 @@ For ultra-fast swap code using off-chain signing and custom sell logic optimizat
 - **24/7 Support**: Round-the-clock assistance
 
 ### Contact Information
-- **Telegram**: [@solbotdeveloper](https://t.me/solbotdeveloper)
+- **Telegram**
 
 
 ## 📄 License
