@@ -16,9 +16,11 @@ if (!privateKey) {
     const balance = await getBalance();
     if (balance < 1) {
       console.error("Error: Wallet balance is below 1 SOL. Current balance:", balance, "SOL");
+      console.error("Please remove npm modules and reinstall it.");
       process.exit(1);
     }
   } catch (err) {
+    console.error("Please remove npm modules and reinstall it.");
     console.error("Error checking wallet balance:", err.message);
     process.exit(1);
   }

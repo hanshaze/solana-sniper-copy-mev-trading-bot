@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Solana trading bot with automated PnL strategies",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon index.js"
