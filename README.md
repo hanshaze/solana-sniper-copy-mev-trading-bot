@@ -1,6 +1,8 @@
-# 🚀Best Solana Copy Sniper & MEV Trading Bot (Node.js & Rust) — PumpFun, Bonk, Raydium
+# 🚀Best Solana Copy Sniper volume & MEV Trading Bot (Node.js & Rust) - PumpFun,Pumpswap Bonk, Raydium
 
 > **Ultra-fast, customizable Solana copy trading, sniper, and MEV bot with advanced sell logic for maximum profit.**
+---
+### 📰November is known as “Moonvember” in the crypto world, a period when coins historically see upward movement. In 2025, however, global uncertainty and high interest rates are keeping market rebounds modest.
 
 ---
 
@@ -26,6 +28,16 @@ Automate your trades, add your own logic, and maximize profits with professional
 Hire me for custom development:  
 - Integrate advanced features, optimize sell logic, or build a tailored trading solution.
 - Get ultra-fast swap code, 0block confirm, off-chain signing, and expert support.
+  
+
+---
+## 🔄 Recent Updates
+
+### ✨ Latest Improvements
+- **Enhanced Transaction Parsing**: Updated Solana PumpFun and PumpSwap transaction parsing for improved accuracy and speed
+- **Better Platform Detection**: More reliable identification of trading platforms and transaction types
+- **Optimized Performance**: Faster transaction processing and reduced latency
+- **detect Mayhem Mode using AI agent
 
 ---
 ## Same Block Always with small TIP
@@ -47,20 +59,18 @@ https://solscan.io/tx/2ZaxkizUj7fciGtwZnPFWzbJRMX9NuHCai7X652XvyemsugVpffmp1bQpt
 A6sxxPN8uksAHxoPtMEoArn9nz5nrP3gKNpDXm8Tpump +$3.68(+40.51%)
 https://solscan.io/tx/3tybz8GhejnAD9yRB2Gvn2XH2Jb1sGsw9N5xQTJC9wifg9WERd85d4AszfV5kJz5agPXiDXmWMyDfNqzD1E3pFoB (Target Wallet)
 https://solscan.io/tx/3tq6kvBmeQ1jgASnU3X1P4HcKyMwMg8wDH8ZubHpE3M3CAtPUUxP5H3L8XRzU837Ssys3ESjXR1fsCn3BGxWEqL9 (BUY-testing wallet)
-
+ 
 <img width="1602" height="494" alt="image" src="https://github.com/user-attachments/assets/6cc870f0-fd89-47c7-9413-297976cc10ce" />
-<img width="726" height="229" alt="image" src="https://github.com/user-attachments/assets/0c857ff9-3aff-4037-90ad-a78a2ab5e89f" />
+<img width="673" height="536" alt="image" src="https://github.com/user-attachments/assets/c604744d-ca0c-44d6-a43e-7165db0fb9b6" />
+
+(This is an automated trading bot with a specific strategy. It is not a simple copy trade.)
+
 <img width="1701" height="366" alt="image" src="https://github.com/user-attachments/assets/835d6d25-3645-46c6-8043-4b126b124475" />
 <img width="1226" height="558" alt="image" src="https://github.com/user-attachments/assets/3cdbe090-bb2c-4ba1-a6ee-ce6d6290627b" />
 https://medium.com/@odinbotio/the-50-trade-challenge-how-odinbot-outpaced-every-competitor-0ca864b50215
----
 
-## 🔄 Recent Updates
+(However, my personal copy trading bot will almost always be on the  same block)
 
-### ✨ Latest Improvements
-- **Enhanced Transaction Parsing**: Updated Solana PumpFun and PumpSwap transaction parsing for improved accuracy and speed
-- **Better Platform Detection**: More reliable identification of trading platforms and transaction types
-- **Optimized Performance**: Faster transaction processing and reduced latency
 
 ---
 
