@@ -37,7 +37,8 @@ Hire me for custom development:
 - **Enhanced Transaction Parsing**: Updated Solana PumpFun and PumpSwap transaction parsing for improved accuracy and speed
 - **Better Platform Detection**: More reliable identification of trading platforms and transaction types
 - **Optimized Performance**: Faster transaction processing and reduced latency
-- **detect Mayhem Mode using AI agent
+- **detect Mayhem Mode** using AI agent
+- **Token 2022 Program** from Token Program
 
 ---
 ## Same Block Always with small TIP
